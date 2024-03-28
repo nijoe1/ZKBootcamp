@@ -1,4 +1,6 @@
-# zktree-vote
+# ZK-RFP 
+## Powered by Allo RFP Strategy and ZKVote-Tree
+
 Anonymous voting on Ethereum blockchain using zero knowledge proof
 
 ## Usage

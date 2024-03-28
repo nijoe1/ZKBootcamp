@@ -118,10 +118,6 @@ interface IAllo {
         uint256 _baseFee
     ) external;
 
-    //  ====================================
-    //  ==== External/Public Functions =====
-    //  ====================================
-
     /// @notice Creates a new pool (with a custom strategy)
     /// @dev 'msg.sender' must be a member or owner of a profile to create a pool with or without a custom strategy, The encoded data
     ///      will be specific to a given strategy requirements, reference the strategy implementation of 'initialize()'. The strategy
@@ -136,6 +132,27 @@ interface IAllo {
     /// @param _managers The managers of the pool, and can be added/removed later by the pool admin
     /// @return poolId The ID of the pool
     function createPoolWithCustomStrategy(
+        bytes32 _profileId,
+        address _strategy,
+        bytes memory _initStrategyData,
+        address _token,
+        uint256 _amount,
+        Metadata memory _metadata,
+        address[] memory _managers
+    ) external payable returns (uint256 poolId);
+
+    /// @notice Creates a new pool (by cloning a cloneable strategies).
+    /// @dev 'msg.sender' must be owner or member of the profile id passed as '_profileId'.
+    /// @param _profileId The ID of the registry profile, used to check if 'msg.sender' is a member or owner of the profile
+    /// @param _strategy The address of the strategy contract the pool will use.
+    /// @param _initStrategyData The data to initialize the strategy
+    /// @param _token The address of the token
+    /// @param _amount The amount of the token
+    /// @param _metadata The metadata of the pool
+    /// @param _managers The managers of the pool
+    /// @custom:initstrategydata The encoded data will be specific to a given strategy requirements,
+    ///    reference the strategy implementation of 'initialize()'
+    function createPool(
         bytes32 _profileId,
         address _strategy,
         bytes memory _initStrategyData,
@@ -201,18 +218,14 @@ interface IAllo {
 
     /// @notice Registers a recipient and emits {Registered} event if successful and may be handled differently by each strategy.
     /// @param _poolId The ID of the pool to register the recipient for
-    function registerRecipient(
-        uint256 _poolId,
-        bytes memory _data
-    ) external payable returns (address);
+    function registerRecipient(uint256 _poolId, bytes memory _data) external payable returns (address);
 
     /// @notice Registers a batch of recipients.
     /// @param _poolIds The pool ID's to register the recipients for
     /// @param _data The data to pass to the strategy and may be handled differently by each strategy
-    function batchRegisterRecipient(
-        uint256[] memory _poolIds,
-        bytes[] memory _data
-    ) external returns (address[] memory);
+    function batchRegisterRecipient(uint256[] memory _poolIds, bytes[] memory _data)
+        external
+        returns (address[] memory);
 
     /// @notice Funds a pool.
     /// @dev 'msg.value' must be greater than 0 if the token is the native token
@@ -236,11 +249,7 @@ interface IAllo {
     /// @param _poolId The ID of the pool to distribute from
     /// @param _recipientIds The recipient ids to distribute to
     /// @param _data The data to pass to the strategy and may be handled differently by each strategy
-    function distribute(
-        uint256 _poolId,
-        address[] memory _recipientIds,
-        bytes memory _data
-    ) external;
+    function distribute(uint256 _poolId, address[] memory _recipientIds, bytes memory _data) external;
 
     /// =========================
     /// ==== View Functions =====

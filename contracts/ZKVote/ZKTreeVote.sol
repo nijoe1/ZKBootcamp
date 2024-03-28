@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.20;
 
 import "zk-merkle-tree/contracts/ZKTree.sol";
 
@@ -14,10 +14,10 @@ contract ZKTreeVote is ZKTree {
 
     constructor(
         uint32 _levels,
-        IHasher _hasher,
-        IVerifier _verifier,
+        address _hasher,
+        address _verifier,
         address[] memory _validators
-    ) ZKTree(_levels, _hasher, _verifier) {
+    ) ZKTree(_levels, IHasher(_hasher), IVerifier(_verifier)) {
         for (uint i = 0; i < _validators.length; i++) {
             validators[_validators[i]] = true;
         }

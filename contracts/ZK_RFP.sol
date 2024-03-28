@@ -1,17 +1,33 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity 0.8.20;
 
 import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Metadata} from "./libraries/Metadata.sol";
 import {Constants} from "./libraries/Constants.sol";
+import {IStrategy} from "./interfaces/IStrategy.sol";
+import {IAllo} from "./interfaces/IAllo.sol";
+import {IRegistry} from "./interfaces/IRegistry.sol";
+
 import "./ZKVote/ZKTreeVote.sol";
 
 contract ZK_RFP is Constants {
+
     using EnumerableSet for EnumerableSet.Bytes32Set;
 
+    address private hasher;
+
+    address private verifier;
+
+    // Allo contract interface
+    IAllo public Allo;
+    // Registry contract interface
+    IRegistry public Registry;
+    // Profile ID
+    bytes32 public profileId;
+
     /// ================================
-    /// ========== Struct ==============
+    /// ========== Structs ==============
     /// ================================
 
     struct Profile {
@@ -49,7 +65,19 @@ contract ZK_RFP is Constants {
         InitializeParams params;
     }
 
+    /// @notice Stores the details of the milestone
+    struct Milestone {
+        uint256 amountPercentage;
+        Metadata metadata;
+        Status milestoneStatus;
+    }
+
+    /// ================================ State Variables ================================
+
+
     uint256 public _nonce; // Nonce used to generate the 'anchor' address
+
+    uint256[] public poolIds;
 
     mapping(uint256 => Pool) public poolIdInfo;
 
@@ -75,7 +103,7 @@ contract ZK_RFP is Constants {
     }
 
 
-    /// ================================
+    /// ================================ Pool Functions ================================
 
     function createPool(
         InitializeParamsCommittee memory initializeParams,
@@ -112,29 +140,37 @@ contract ZK_RFP is Constants {
             metadata: _metadata,
             privateVoteContract: newContract
         });
+
+        poolIds.push(poolID);
         
     }
 
     function registerRecipient(
         uint256 _poolId,
-        Metadata memory _metadata
+        uint256 _proposalBid,
+        string memory _name,    
+        Metadata memory _metadata,
+        address[] memory _profileMembers
     ) external {
-        bytes32 _profileId = Registry.createProfile(++_nonce, _name, _metadata, msg.sender, _members);
+        require(poolIdInfo[_poolId].registrationEnds >= block.timestamp, "Registration is closed!");
 
-        bytes memory _data = abi.encode(_profileId, _metadata);
+        bytes32 _profileId = Registry.createProfile(++_nonce, _name, _metadata, msg.sender, _profileMembers);
+        address anchor = getProfileData(_profileId).anchor;
+        bytes memory _data = abi.encode(anchor, address(0),_proposalBid,  _metadata);
+
+        recipientInfo[_profileId] = Recipient({
+            recipientAddress: msg.sender,
+            proposalBid: _proposalBid,
+            recipientStatus: Status.Pending,
+            metadata: _metadata
+        });
+
+        poolIdToRecipients[_poolId].add(_profileId);
 
         Allo.registerRecipient(_poolId, _data);
     }
 
-    function registerValidator(
-        uint256 _poolId,
-        address _validator
-    ) external {
-        // TODO PROVE THE RECIPIENT IS ABOVE A CERTAIN AGE USING A ZKPROOF
-        require(poolIdInfo[_poolId].privateVoteContract.isValidator(msg.sender), "Only validator can register validator!");
-        ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
-        pool.registerValidator(_validator);
-    }
+    // ================================ ZK - Voting Functions ================================
 
     function commitment(
         uint256 _poolId,
@@ -168,17 +204,57 @@ contract ZK_RFP is Constants {
             _proof_c
         );
     }
-// get WInner by getting for a pool id all the recipients and getting the one with the highest vote
+
+    // ================================ Strategy Functions ================================
+
+    function setMilestonesToStrategy(
+        uint256 _poolId,
+        IStrategy.Milestone[] memory _milestones
+    ) external {
+        Pool memory pool = poolIdInfo[_poolId];
+        IAllo.Pool memory poolData = Allo.getPool(_poolId);
+        require(pool.privateVoteContract.isValidator(msg.sender), "Only validator can set milestones!");
+        poolData.strategy.setMilestones(_milestones);
+    }
+
+    function distributeCurrentMilestone(
+        uint256 _poolId
+    ) external {
+        Pool memory pool = getPoolData(_poolId);
+
+        require(pool.privateVoteContract.isValidator(msg.sender), "Only validator can distribute current milestone!");
+
+        address[] memory _recipientIds = new address[](1);
+        bytes memory _data;
+
+        Allo.distribute(_poolId, _recipientIds, _data);
+    }
+
+    function rejectMilestone(
+        uint256 _poolId,
+        uint256 _milestoneId
+    ) external {
+        
+        Pool memory pool = getPoolData(_poolId);
+
+        require(pool.privateVoteContract.isValidator(msg.sender), "Only validator can reject milestones!");
+
+        IAllo.Pool memory poolData = Allo.getPool(_poolId);
+
+        poolData.strategy.rejectMilestone(_milestoneId);
+    }
+
     function setPoolWinner(uint256 _poolId) external {
         require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
         EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
         ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
+        Recipient memory recipient;
         uint256 maxVotes = 0;
         uint256 tempVotes;
         bytes32 winner;
         for (uint256 i = 0; i < recipients.length(); i++) {
             bytes32 recipientId = recipients.at(i);
-            Recipient memory recipient = recipientInfo[recipientId];
+            recipient = recipientInfo[recipientId];
             tempVotes = pool.getRecipientVotes(recipient.recipientAddress);
             if (tempVotes > maxVotes) {
                 maxVotes = tempVotes;
@@ -190,45 +266,48 @@ contract ZK_RFP is Constants {
         Allo.allocate(_poolId, abi.encode(recipient.recipientAddress, recipient.proposalBid));
     }
 
-    function setMilestonesToStrategy(
-        uint256 _poolId,
-        Milestone[] memory _milestones
-    ) external {
-        Pool memory pool = poolIdInfo[_poolId];
-        require(pool.ZKTreeVote.isValidator(msg.sender), "Only validator can set milestones!");
-        IStrategy strategy = IStrategy(pool.strategy);
-        strategy.setMilestones(_milestones);
-    }
-
-
-    function getPoolData(
-        uint256 _poolId
-    ) public view returns (Pool memory pool) {
-        pool = poolIdInfo[_poolId];
-    }
-
-    function rejectMilestone(
-        uint256 _poolId,
-        uint256 _milestoneId
-    ) external {
-        Pool memory pool = getPoolData(_poolId);
-        IStrategy strategy = IStrategy(pool.strategy);
-        strategy.rejectMilestone(_milestoneId);
-    }
-
     function increaseMaxBid(
         uint256 _poolId,
         uint256 _maxBid
     ) external {
         Pool memory pool = getPoolData(_poolId);
-        IStrategy strategy = IStrategy(pool.strategy);
-        strategy.increaseMaxBid(_maxBid);
+        require(pool.privateVoteContract.isValidator(msg.sender), "Only validator can increase max bid!");
+
+        IAllo.Pool memory poolData = Allo.getPool(_poolId);
+        poolData.strategy.increaseMaxBid(_maxBid);
+    }
+
+    function registerValidator(
+        uint256 _poolId,
+        address _validator
+    ) external {
+        // TODO PROVE THE RECIPIENT IS ABOVE A CERTAIN AGE USING A ZKPROOF
+        require(poolIdInfo[_poolId].privateVoteContract.isValidator(msg.sender), "Only validator can register validator!");
+        ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
+        pool.registerValidator(_validator);
+    }
+
+    /// ================================ View Functions ================================
+
+    function getPoolRecipients(uint256 _poolId) external view returns (Recipient[] memory) {
+        EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
+        Recipient[] memory recipientIds = new Recipient[](recipients.length());
+        for (uint256 i = 0; i < recipients.length(); i++) {
+            recipientIds[i] = recipientInfo[recipients.at(i)];
+        }
+        return recipientIds;
     }
 
     function getProfileData(
         bytes32 _profileId
-    ) external view returns (IRegistry.Profile memory profile) {
+    ) public view returns (IRegistry.Profile memory profile) {
         profile = Registry.getProfileById(_profileId);
+    }
+
+    function getPoolData(
+        uint256 _poolId
+    ) public view returns (Pool memory pool) {
+        pool = poolIdInfo[_poolId];
     }
 
     function getTime() public view returns (uint256) {

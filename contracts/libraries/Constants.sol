@@ -1,9 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-pragma solidity 0.8.19;
-
-import {IAllo} from "../interfaces/IAllo.sol";
-import {IAnchor} from "../interfaces/IAnchor.sol";
-import {IRegistry} from "../interfaces/IRegistry.sol";
+pragma solidity 0.8.20;
 
 abstract contract Constants {
     // RFP Commitee Strategy address
@@ -11,22 +7,20 @@ abstract contract Constants {
 
     address constant NATIVE = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
     
-    uint256 internal levels = 20;
-
-    // Allo contract interface
-    IAllo public Allo;
-    // Anchor contract interface
-    IAnchor public Anchor;
-    // Registry contract interface
-    IRegistry public Registry;
-    // Profile ID
-    bytes32 public profileId;
+    uint32 internal levels = 20;
 
     address[] _members;
 
-    address private hasher;
-
-    address private verifier;
+    /// @notice The Status enum that all recipients are based from
+    enum Status {
+        None,
+        Pending,
+        Accepted,
+        Rejected,
+        Appealed,
+        InReview,
+        Canceled
+    }
 }
 
 
