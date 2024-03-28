@@ -10,6 +10,7 @@ Anonymous Allocation voting for RFPs using the Allo protocol on Ethereum based b
 - Install wget (by `apt-get install wget` on Ubuntu/Debian)
 - Install the project dependencies and prepare by `npm install` in the project directory
 - add you `PRIVATE_KEY = 'yours PK'` into a `.env`
+- make sure you have some arbitrum sepolia ETH into your wallet
 - run `npx hardhat run ./scripts/deploy.ts`
 
 The app uses MetaMask to connect the blockchain, so the MetaMask extension have to be installed, and connected to the Hardhat local node. The smart contract owner is the first Hardhat account, and the second account is set as a validator by the deployment script.
