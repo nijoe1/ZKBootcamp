@@ -1,4 +1,4 @@
-# ZK-RFP
+# ZK-RFP a project built on Encode ZK-Bootcamp
 
 ## Powered by Allo RFP Strategy and ZKVote-Tree
 
