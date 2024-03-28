@@ -17,10 +17,10 @@ module.exports = {
       },
     },
   },
-  defaultNetwork: "sepolia",
+  defaultNetwork: "arbitrum-sepolia",
 
   networks: {
-    sepolia: {
+    "arbitrum-sepolia": {
       chainId: 421614,
       url: "https://arbitrum-sepolia.blockpi.network/v1/rpc/public		",
       accounts: [PRIVATE_KEY],
