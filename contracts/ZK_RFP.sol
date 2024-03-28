@@ -152,7 +152,7 @@ contract ZK_RFP is Constants {
         Metadata memory _metadata,
         address[] memory _profileMembers
     ) external {
-        // require(poolIdInfo[_poolId].registrationEnds >= block.timestamp, "Registration is closed!");
+        require(poolIdInfo[_poolId].registrationEnds >= block.timestamp, "Registration is closed!");
 
         bytes32 _profileId = Registry.createProfile(++_nonce, _name, _metadata, address(this), _profileMembers);
         address anchor = getProfileData(_profileId).anchor;
@@ -192,7 +192,7 @@ contract ZK_RFP is Constants {
         uint[2] memory _proof_c
     ) external {
         require(poolIdInfo[_poolId].votingEnds >= block.timestamp, "Only validator can vote!");
-        // require(poolIdToRecipients[_poolId].contains(_recipient), "Recipient not registered!");
+        require(poolIdToRecipients[_poolId].contains(_recipient), "Recipient not registered!");
 
         ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
 
@@ -207,7 +207,7 @@ contract ZK_RFP is Constants {
     }
 
     function setPoolWinner(uint256 _poolId) external {
-        // require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
+        require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
         EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
         ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
         Recipient memory recipient;

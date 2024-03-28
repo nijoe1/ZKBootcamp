@@ -102,7 +102,7 @@ async function main() {
     wallet,
     20,
     commitment1,
-    "keys/Verifier.zkey"
+    "./keys/verifier.zkey"
   );
 
   console.log("Nullifier Hash 1: ", commitment1.nullifierHash);
