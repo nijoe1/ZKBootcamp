@@ -6,12 +6,11 @@ Anonymous Allocation voting for RFPs using the Allo protocol on Ethereum based b
 
 ## Usage
 
-- Clone the repository by `git clone https://github.com/TheBojda/zktree-vote.git`
+- Clone the repository by `git clone https://github.com/nijoe1/ZKBootcamp.git`
 - Install wget (by `apt-get install wget` on Ubuntu/Debian)
 - Install the project dependencies and prepare by `npm install` in the project directory
-- Start a Hardhat node by `npx hardhat node` in the project directory
-- In another terminal deploy the smartcontract by `npm run deploy`
-- Start the app by `npm start`
+- add you `PRIVATE_KEY = 'yours PK'` into a `.env`
+- run `npx hardhat run ./scripts/deploy.ts`
 
 The app uses MetaMask to connect the blockchain, so the MetaMask extension have to be installed, and connected to the Hardhat local node. The smart contract owner is the first Hardhat account, and the second account is set as a validator by the deployment script.
 
