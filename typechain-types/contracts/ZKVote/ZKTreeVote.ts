@@ -78,76 +78,76 @@ export interface ZKTreeVoteInterface extends utils.Interface {
       | "validators"
       | "verifier"
       | "vote"
-      | "zeros"
+      | "zeros",
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "FIELD_SIZE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "ROOT_HISTORY_SIZE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "ZERO_VALUE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "commitments",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(
     functionFragment: "currentRootIndex",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "filledSubtrees",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "getLastRoot",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "getRecipientVotes",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "hashLeftRight",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(functionFragment: "hasher", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "isKnownRoot",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(
     functionFragment: "isValidator",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>],
   ): string;
   encodeFunctionData(functionFragment: "levels", values?: undefined): string;
   encodeFunctionData(functionFragment: "nextIndex", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "nullifiers",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "registerCommitment",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "registerValidator",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "roots",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "validators",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>],
   ): string;
   encodeFunctionData(functionFragment: "verifier", values?: undefined): string;
   encodeFunctionData(
@@ -159,54 +159,54 @@ export interface ZKTreeVoteInterface extends utils.Interface {
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
-    ]
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+    ],
   ): string;
   encodeFunctionData(
     functionFragment: "zeros",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
 
   decodeFunctionResult(functionFragment: "FIELD_SIZE", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "ROOT_HISTORY_SIZE",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "ZERO_VALUE", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "commitments",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "currentRootIndex",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "filledSubtrees",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getLastRoot",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getRecipientVotes",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "hashLeftRight",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "hasher", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isKnownRoot",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "isValidator",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "levels", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "nextIndex", data: BytesLike): Result;
@@ -214,11 +214,11 @@ export interface ZKTreeVoteInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "registerCommitment",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "registerValidator",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "roots", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "validators", data: BytesLike): Result;
@@ -255,15 +255,15 @@ export interface ZKTreeVote extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
+    eventFilter?: TypedEventFilter<TEvent>,
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
+    eventFilter: TypedEventFilter<TEvent>,
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -280,39 +280,39 @@ export interface ZKTreeVote extends BaseContract {
 
     commitments(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     currentRootIndex(overrides?: CallOverrides): Promise<[number]>;
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     getLastRoot(overrides?: CallOverrides): Promise<[string]>;
 
     getRecipientVotes(
       _option: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber]>;
 
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     hasher(overrides?: CallOverrides): Promise<[string]>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     isValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     levels(overrides?: CallOverrides): Promise<[number]>;
@@ -321,7 +321,7 @@ export interface ZKTreeVote extends BaseContract {
 
     nullifiers(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
@@ -329,22 +329,22 @@ export interface ZKTreeVote extends BaseContract {
     registerCommitment(
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     registerValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     validators(
       arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     verifier(overrides?: CallOverrides): Promise<[string]>;
@@ -356,15 +356,15 @@ export interface ZKTreeVote extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
   };
 
@@ -376,39 +376,39 @@ export interface ZKTreeVote extends BaseContract {
 
   commitments(
     arg0: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   currentRootIndex(overrides?: CallOverrides): Promise<number>;
 
   filledSubtrees(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   getLastRoot(overrides?: CallOverrides): Promise<string>;
 
   getRecipientVotes(
     _option: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   hashLeftRight(
     _left: PromiseOrValue<BigNumberish>,
     _right: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   hasher(overrides?: CallOverrides): Promise<string>;
 
   isKnownRoot(
     _root: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   isValidator(
     _validator: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   levels(overrides?: CallOverrides): Promise<number>;
@@ -417,7 +417,7 @@ export interface ZKTreeVote extends BaseContract {
 
   nullifiers(
     arg0: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   owner(overrides?: CallOverrides): Promise<string>;
@@ -425,22 +425,22 @@ export interface ZKTreeVote extends BaseContract {
   registerCommitment(
     _uniqueHash: PromiseOrValue<BigNumberish>,
     _commitment: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   registerValidator(
     _validator: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   roots(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   validators(
     arg0: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   verifier(overrides?: CallOverrides): Promise<string>;
@@ -452,15 +452,15 @@ export interface ZKTreeVote extends BaseContract {
     _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     _proof_b: [
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     ],
     _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   zeros(
     i: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   callStatic: {
@@ -472,39 +472,39 @@ export interface ZKTreeVote extends BaseContract {
 
     commitments(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     currentRootIndex(overrides?: CallOverrides): Promise<number>;
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getLastRoot(overrides?: CallOverrides): Promise<string>;
 
     getRecipientVotes(
       _option: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     hasher(overrides?: CallOverrides): Promise<string>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     isValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     levels(overrides?: CallOverrides): Promise<number>;
@@ -513,7 +513,7 @@ export interface ZKTreeVote extends BaseContract {
 
     nullifiers(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     owner(overrides?: CallOverrides): Promise<string>;
@@ -521,22 +521,22 @@ export interface ZKTreeVote extends BaseContract {
     registerCommitment(
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     registerValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     validators(
       arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     verifier(overrides?: CallOverrides): Promise<string>;
@@ -548,15 +548,15 @@ export interface ZKTreeVote extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
   };
 
@@ -564,12 +564,12 @@ export interface ZKTreeVote extends BaseContract {
     "Commit(bytes32,uint32,uint256)"(
       commitment?: PromiseOrValue<BytesLike> | null,
       leafIndex?: null,
-      timestamp?: null
+      timestamp?: null,
     ): CommitEventFilter;
     Commit(
       commitment?: PromiseOrValue<BytesLike> | null,
       leafIndex?: null,
-      timestamp?: null
+      timestamp?: null,
     ): CommitEventFilter;
   };
 
@@ -582,39 +582,39 @@ export interface ZKTreeVote extends BaseContract {
 
     commitments(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     currentRootIndex(overrides?: CallOverrides): Promise<BigNumber>;
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLastRoot(overrides?: CallOverrides): Promise<BigNumber>;
 
     getRecipientVotes(
       _option: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     hasher(overrides?: CallOverrides): Promise<BigNumber>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     isValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     levels(overrides?: CallOverrides): Promise<BigNumber>;
@@ -623,7 +623,7 @@ export interface ZKTreeVote extends BaseContract {
 
     nullifiers(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -631,22 +631,22 @@ export interface ZKTreeVote extends BaseContract {
     registerCommitment(
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     registerValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     validators(
       arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     verifier(overrides?: CallOverrides): Promise<BigNumber>;
@@ -658,15 +658,15 @@ export interface ZKTreeVote extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -679,39 +679,39 @@ export interface ZKTreeVote extends BaseContract {
 
     commitments(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     currentRootIndex(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getLastRoot(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getRecipientVotes(
       _option: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     hasher(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     isValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     levels(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -720,7 +720,7 @@ export interface ZKTreeVote extends BaseContract {
 
     nullifiers(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -728,22 +728,22 @@ export interface ZKTreeVote extends BaseContract {
     registerCommitment(
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     registerValidator(
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     validators(
       arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     verifier(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -755,15 +755,15 @@ export interface ZKTreeVote extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

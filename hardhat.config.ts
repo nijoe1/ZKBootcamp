@@ -19,7 +19,6 @@ module.exports = {
     },
   },
   // defaultNetwork: "sepolia",
-  defaultNetwork: "calibration",
 
   networks: {
     sepolia: {
@@ -27,21 +26,9 @@ module.exports = {
       url: "https://ethereum-sepolia-rpc.publicnode.com",
       accounts: [PRIVATE_KEY],
     },
-    calibration: {
-      url: "https://rpc.ankr.com/filecoin_testnet",
-
-      // url: "https://filecoin-calibration.chainup.net/rpc/v1	",
-      accounts: [PRIVATE_KEY],
-    },
-    "local-tableland": {
-      url: "http://127.0.0.1:8545",
-      accounts: [PRIVATE_KEY],
-    },
   },
   etherscan: {
-    // apiKey: "JYMKRTHHFUSX4X11I1NQRNW6X7K2FJFJUU",
     apiKey: "KNVT7KRT9B15Z5UTXZT8TG8HNMIJXWXRMY",
-
     customChains: [],
   },
   paths: {

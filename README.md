@@ -1,8 +1,8 @@
-# ZK-RFP 
+# ZK-RFP
+
 ## Powered by Allo RFP Strategy and ZKVote-Tree
 
 Anonymous Allocation voting for RFPs using the Allo protocol on Ethereum based blockchain using zero knowledge proofs from circom
-
 
 ## Usage
 
@@ -15,6 +15,6 @@ Anonymous Allocation voting for RFPs using the Allo protocol on Ethereum based b
 
 The app uses MetaMask to connect the blockchain, so the MetaMask extension have to be installed, and connected to the Hardhat local node. The smart contract owner is the first Hardhat account, and the second account is set as a validator by the deployment script.
 
-## Architecture Diagram 
+## Architecture Diagram
 
 <img src="./public/diagram.png"/>

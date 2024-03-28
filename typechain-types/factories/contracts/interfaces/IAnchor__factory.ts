@@ -48,7 +48,7 @@ export class IAnchor__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IAnchor {
     return new Contract(address, _abi, signerOrProvider) as IAnchor;
   }

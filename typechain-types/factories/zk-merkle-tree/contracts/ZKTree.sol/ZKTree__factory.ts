@@ -328,7 +328,7 @@ type ZKTreeConstructorParams =
   | ConstructorParameters<typeof ContractFactory>;
 
 const isSuperArgs = (
-  xs: ZKTreeConstructorParams
+  xs: ZKTreeConstructorParams,
 ): xs is ConstructorParameters<typeof ContractFactory> => xs.length > 1;
 
 export class ZKTree__factory extends ContractFactory {
@@ -344,26 +344,26 @@ export class ZKTree__factory extends ContractFactory {
     _levels: PromiseOrValue<BigNumberish>,
     _hasher: PromiseOrValue<string>,
     _verifier: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ZKTree> {
     return super.deploy(
       _levels,
       _hasher,
       _verifier,
-      overrides || {}
+      overrides || {},
     ) as Promise<ZKTree>;
   }
   override getDeployTransaction(
     _levels: PromiseOrValue<BigNumberish>,
     _hasher: PromiseOrValue<string>,
     _verifier: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(
       _levels,
       _hasher,
       _verifier,
-      overrides || {}
+      overrides || {},
     );
   }
   override attach(address: string): ZKTree {

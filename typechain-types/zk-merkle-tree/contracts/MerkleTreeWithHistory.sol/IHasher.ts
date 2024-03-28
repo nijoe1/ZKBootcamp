@@ -33,8 +33,8 @@ export interface IHasherInterface extends utils.Interface {
     values: [
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>
-    ]
+      PromiseOrValue<BigNumberish>,
+    ],
   ): string;
 
   decodeFunctionResult(functionFragment: "MiMCSponge", data: BytesLike): Result;
@@ -52,15 +52,15 @@ export interface IHasher extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
+    eventFilter?: TypedEventFilter<TEvent>,
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
+    eventFilter: TypedEventFilter<TEvent>,
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -73,7 +73,7 @@ export interface IHasher extends BaseContract {
       in_xL: PromiseOrValue<BigNumberish>,
       in_xR: PromiseOrValue<BigNumberish>,
       k: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber] & { xL: BigNumber; xR: BigNumber }>;
   };
 
@@ -81,7 +81,7 @@ export interface IHasher extends BaseContract {
     in_xL: PromiseOrValue<BigNumberish>,
     in_xR: PromiseOrValue<BigNumberish>,
     k: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<[BigNumber, BigNumber] & { xL: BigNumber; xR: BigNumber }>;
 
   callStatic: {
@@ -89,7 +89,7 @@ export interface IHasher extends BaseContract {
       in_xL: PromiseOrValue<BigNumberish>,
       in_xR: PromiseOrValue<BigNumberish>,
       k: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber] & { xL: BigNumber; xR: BigNumber }>;
   };
 
@@ -100,7 +100,7 @@ export interface IHasher extends BaseContract {
       in_xL: PromiseOrValue<BigNumberish>,
       in_xR: PromiseOrValue<BigNumberish>,
       k: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -109,7 +109,7 @@ export interface IHasher extends BaseContract {
       in_xL: PromiseOrValue<BigNumberish>,
       in_xR: PromiseOrValue<BigNumberish>,
       k: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -247,7 +247,7 @@ type MerkleTreeWithHistoryConstructorParams =
   | ConstructorParameters<typeof ContractFactory>;
 
 const isSuperArgs = (
-  xs: MerkleTreeWithHistoryConstructorParams
+  xs: MerkleTreeWithHistoryConstructorParams,
 ): xs is ConstructorParameters<typeof ContractFactory> => xs.length > 1;
 
 export class MerkleTreeWithHistory__factory extends ContractFactory {
@@ -262,18 +262,18 @@ export class MerkleTreeWithHistory__factory extends ContractFactory {
   override deploy(
     _levels: PromiseOrValue<BigNumberish>,
     _hasher: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<MerkleTreeWithHistory> {
     return super.deploy(
       _levels,
       _hasher,
-      overrides || {}
+      overrides || {},
     ) as Promise<MerkleTreeWithHistory>;
   }
   override getDeployTransaction(
     _levels: PromiseOrValue<BigNumberish>,
     _hasher: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(_levels, _hasher, overrides || {});
   }
@@ -291,12 +291,12 @@ export class MerkleTreeWithHistory__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): MerkleTreeWithHistory {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as MerkleTreeWithHistory;
   }
 }

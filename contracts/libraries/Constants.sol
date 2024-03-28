@@ -7,8 +7,6 @@ abstract contract Constants {
 
     address constant NATIVE = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
     
-    uint32 internal levels = 20;
-
     address[] _members;
 
     /// @notice The Status enum that all recipients are based from

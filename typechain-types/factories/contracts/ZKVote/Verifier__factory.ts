@@ -54,7 +54,7 @@ type VerifierConstructorParams =
   | ConstructorParameters<typeof ContractFactory>;
 
 const isSuperArgs = (
-  xs: VerifierConstructorParams
+  xs: VerifierConstructorParams,
 ): xs is ConstructorParameters<typeof ContractFactory> => xs.length > 1;
 
 export class Verifier__factory extends ContractFactory {
@@ -67,12 +67,12 @@ export class Verifier__factory extends ContractFactory {
   }
 
   override deploy(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<Verifier> {
     return super.deploy(overrides || {}) as Promise<Verifier>;
   }
   override getDeployTransaction(
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(overrides || {});
   }
@@ -90,7 +90,7 @@ export class Verifier__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): Verifier {
     return new Contract(address, _abi, signerOrProvider) as Verifier;
   }

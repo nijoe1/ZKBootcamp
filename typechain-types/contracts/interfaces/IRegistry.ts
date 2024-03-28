@@ -53,7 +53,7 @@ export declare namespace IRegistry {
     string,
     MetadataStructOutput,
     string,
-    string
+    string,
   ] & {
     id: string;
     nonce: BigNumber;
@@ -95,16 +95,16 @@ export interface IRegistryInterface extends utils.Interface {
       | "removeMembers"
       | "updateProfileMetadata"
       | "updateProfileName"
-      | "updateProfilePendingOwner"
+      | "updateProfilePendingOwner",
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "acceptProfileOwnership",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(
     functionFragment: "addMembers",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>[]]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>[]],
   ): string;
   encodeFunctionData(
     functionFragment: "createProfile",
@@ -113,98 +113,98 @@ export interface IRegistryInterface extends utils.Interface {
       PromiseOrValue<string>,
       MetadataStruct,
       PromiseOrValue<string>,
-      PromiseOrValue<string>[]
-    ]
+      PromiseOrValue<string>[],
+    ],
   ): string;
   encodeFunctionData(
     functionFragment: "getProfileByAnchor",
-    values: [PromiseOrValue<string>]
+    values: [PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "getProfileById",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(
     functionFragment: "isMemberOfProfile",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "isOwnerOfProfile",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "isOwnerOrMemberOfProfile",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "recoverFunds",
-    values: [PromiseOrValue<string>, PromiseOrValue<string>]
+    values: [PromiseOrValue<string>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "removeMembers",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>[]]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>[]],
   ): string;
   encodeFunctionData(
     functionFragment: "updateProfileMetadata",
-    values: [PromiseOrValue<BytesLike>, MetadataStruct]
+    values: [PromiseOrValue<BytesLike>, MetadataStruct],
   ): string;
   encodeFunctionData(
     functionFragment: "updateProfileName",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "updateProfilePendingOwner",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
   ): string;
 
   decodeFunctionResult(
     functionFragment: "acceptProfileOwnership",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "addMembers", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "createProfile",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getProfileByAnchor",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getProfileById",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "isMemberOfProfile",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "isOwnerOfProfile",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "isOwnerOrMemberOfProfile",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "recoverFunds",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "removeMembers",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateProfileMetadata",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateProfileName",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateProfilePendingOwner",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
 
   events: {
@@ -296,15 +296,15 @@ export interface IRegistry extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
+    eventFilter?: TypedEventFilter<TEvent>,
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
+    eventFilter: TypedEventFilter<TEvent>,
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -315,13 +315,13 @@ export interface IRegistry extends BaseContract {
   functions: {
     acceptProfileOwnership(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     addMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     createProfile(
@@ -330,12 +330,12 @@ export interface IRegistry extends BaseContract {
       _metadata: MetadataStruct,
       _owner: PromiseOrValue<string>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     getProfileByAnchor(
       _anchor: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [IRegistry.ProfileStructOutput] & {
         profile: IRegistry.ProfileStructOutput;
@@ -344,7 +344,7 @@ export interface IRegistry extends BaseContract {
 
     getProfileById(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [IRegistry.ProfileStructOutput] & {
         profile: IRegistry.ProfileStructOutput;
@@ -354,61 +354,61 @@ export interface IRegistry extends BaseContract {
     isMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _member: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean] & { isMemberOfProfile: boolean }>;
 
     isOwnerOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean] & { isOwnerOfProfile: boolean }>;
 
     isOwnerOrMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean] & { isOwnerOrMemberOfProfile: boolean }>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     removeMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     updateProfileMetadata(
       _profileId: PromiseOrValue<BytesLike>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     updateProfileName(
       _profileId: PromiseOrValue<BytesLike>,
       _name: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     updateProfilePendingOwner(
       _profileId: PromiseOrValue<BytesLike>,
       _pendingOwner: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
   };
 
   acceptProfileOwnership(
     _profileId: PromiseOrValue<BytesLike>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   addMembers(
     _profileId: PromiseOrValue<BytesLike>,
     _members: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   createProfile(
@@ -417,77 +417,77 @@ export interface IRegistry extends BaseContract {
     _metadata: MetadataStruct,
     _owner: PromiseOrValue<string>,
     _members: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   getProfileByAnchor(
     _anchor: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<IRegistry.ProfileStructOutput>;
 
   getProfileById(
     _profileId: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<IRegistry.ProfileStructOutput>;
 
   isMemberOfProfile(
     _profileId: PromiseOrValue<BytesLike>,
     _member: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   isOwnerOfProfile(
     _profileId: PromiseOrValue<BytesLike>,
     _owner: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   isOwnerOrMemberOfProfile(
     _profileId: PromiseOrValue<BytesLike>,
     _account: PromiseOrValue<string>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   recoverFunds(
     _token: PromiseOrValue<string>,
     _recipient: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   removeMembers(
     _profileId: PromiseOrValue<BytesLike>,
     _members: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   updateProfileMetadata(
     _profileId: PromiseOrValue<BytesLike>,
     _metadata: MetadataStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   updateProfileName(
     _profileId: PromiseOrValue<BytesLike>,
     _name: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   updateProfilePendingOwner(
     _profileId: PromiseOrValue<BytesLike>,
     _pendingOwner: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
     acceptProfileOwnership(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     addMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     createProfile(
@@ -496,65 +496,65 @@ export interface IRegistry extends BaseContract {
       _metadata: MetadataStruct,
       _owner: PromiseOrValue<string>,
       _members: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getProfileByAnchor(
       _anchor: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<IRegistry.ProfileStructOutput>;
 
     getProfileById(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<IRegistry.ProfileStructOutput>;
 
     isMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _member: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     isOwnerOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     isOwnerOrMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     removeMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     updateProfileMetadata(
       _profileId: PromiseOrValue<BytesLike>,
       _metadata: MetadataStruct,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     updateProfileName(
       _profileId: PromiseOrValue<BytesLike>,
       _name: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     updateProfilePendingOwner(
       _profileId: PromiseOrValue<BytesLike>,
       _pendingOwner: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
   };
 
@@ -565,7 +565,7 @@ export interface IRegistry extends BaseContract {
       name?: null,
       metadata?: null,
       owner?: null,
-      anchor?: null
+      anchor?: null,
     ): ProfileCreatedEventFilter;
     ProfileCreated(
       profileId?: PromiseOrValue<BytesLike> | null,
@@ -573,58 +573,58 @@ export interface IRegistry extends BaseContract {
       name?: null,
       metadata?: null,
       owner?: null,
-      anchor?: null
+      anchor?: null,
     ): ProfileCreatedEventFilter;
 
     "ProfileMetadataUpdated(bytes32,tuple)"(
       profileId?: PromiseOrValue<BytesLike> | null,
-      metadata?: null
+      metadata?: null,
     ): ProfileMetadataUpdatedEventFilter;
     ProfileMetadataUpdated(
       profileId?: PromiseOrValue<BytesLike> | null,
-      metadata?: null
+      metadata?: null,
     ): ProfileMetadataUpdatedEventFilter;
 
     "ProfileNameUpdated(bytes32,string,address)"(
       profileId?: PromiseOrValue<BytesLike> | null,
       name?: null,
-      anchor?: null
+      anchor?: null,
     ): ProfileNameUpdatedEventFilter;
     ProfileNameUpdated(
       profileId?: PromiseOrValue<BytesLike> | null,
       name?: null,
-      anchor?: null
+      anchor?: null,
     ): ProfileNameUpdatedEventFilter;
 
     "ProfileOwnerUpdated(bytes32,address)"(
       profileId?: PromiseOrValue<BytesLike> | null,
-      owner?: null
+      owner?: null,
     ): ProfileOwnerUpdatedEventFilter;
     ProfileOwnerUpdated(
       profileId?: PromiseOrValue<BytesLike> | null,
-      owner?: null
+      owner?: null,
     ): ProfileOwnerUpdatedEventFilter;
 
     "ProfilePendingOwnerUpdated(bytes32,address)"(
       profileId?: PromiseOrValue<BytesLike> | null,
-      pendingOwner?: null
+      pendingOwner?: null,
     ): ProfilePendingOwnerUpdatedEventFilter;
     ProfilePendingOwnerUpdated(
       profileId?: PromiseOrValue<BytesLike> | null,
-      pendingOwner?: null
+      pendingOwner?: null,
     ): ProfilePendingOwnerUpdatedEventFilter;
   };
 
   estimateGas: {
     acceptProfileOwnership(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     addMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     createProfile(
@@ -633,78 +633,78 @@ export interface IRegistry extends BaseContract {
       _metadata: MetadataStruct,
       _owner: PromiseOrValue<string>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     getProfileByAnchor(
       _anchor: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getProfileById(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     isMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _member: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     isOwnerOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     isOwnerOrMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     removeMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     updateProfileMetadata(
       _profileId: PromiseOrValue<BytesLike>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     updateProfileName(
       _profileId: PromiseOrValue<BytesLike>,
       _name: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     updateProfilePendingOwner(
       _profileId: PromiseOrValue<BytesLike>,
       _pendingOwner: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     acceptProfileOwnership(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     addMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     createProfile(
@@ -713,65 +713,65 @@ export interface IRegistry extends BaseContract {
       _metadata: MetadataStruct,
       _owner: PromiseOrValue<string>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     getProfileByAnchor(
       _anchor: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getProfileById(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     isMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _member: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     isOwnerOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _owner: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     isOwnerOrMemberOfProfile(
       _profileId: PromiseOrValue<BytesLike>,
       _account: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     removeMembers(
       _profileId: PromiseOrValue<BytesLike>,
       _members: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     updateProfileMetadata(
       _profileId: PromiseOrValue<BytesLike>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     updateProfileName(
       _profileId: PromiseOrValue<BytesLike>,
       _name: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     updateProfilePendingOwner(
       _profileId: PromiseOrValue<BytesLike>,
       _pendingOwner: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -54,7 +54,7 @@ export declare namespace ZK_RFP {
 
   export type InitializeParamsCommitteeStructOutput = [
     BigNumber,
-    ZK_RFP.InitializeParamsStructOutput
+    ZK_RFP.InitializeParamsStructOutput,
   ] & { voteThreshold: BigNumber; params: ZK_RFP.InitializeParamsStructOutput };
 
   export type PoolStruct = {
@@ -72,7 +72,7 @@ export declare namespace ZK_RFP {
     BigNumber,
     BigNumber,
     MetadataStructOutput,
-    string
+    string,
   ] & {
     registrationEnds: BigNumber;
     votingEnds: BigNumber;
@@ -93,7 +93,7 @@ export declare namespace ZK_RFP {
     string,
     BigNumber,
     number,
-    MetadataStructOutput
+    MetadataStructOutput,
   ] & {
     recipientAddress: string;
     proposalBid: BigNumber;
@@ -118,7 +118,7 @@ export declare namespace IRegistry {
     string,
     MetadataStructOutput,
     string,
-    string
+    string,
   ] & {
     id: string;
     nonce: BigNumber;
@@ -139,7 +139,7 @@ export declare namespace IStrategy {
   export type MilestoneStructOutput = [
     BigNumber,
     MetadataStructOutput,
-    number
+    number,
   ] & {
     amountPercentage: BigNumber;
     metadata: MetadataStructOutput;
@@ -196,7 +196,7 @@ export interface ZK_RFPInterface extends utils.Interface {
       | "registerValidator"
       | "rejectMilestone"
       | "setMilestonesToStrategy"
-      | "setPoolWinner"
+      | "setPoolWinner",
   ): FunctionFragment;
 
   encodeFunctionData(functionFragment: "Allo", values?: undefined): string;
@@ -210,10 +210,10 @@ export interface ZK_RFPInterface extends utils.Interface {
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
-    ]
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+    ],
   ): string;
   encodeFunctionData(functionFragment: "Registry", values?: undefined): string;
   encodeFunctionData(functionFragment: "_nonce", values?: undefined): string;
@@ -222,8 +222,8 @@ export interface ZK_RFPInterface extends utils.Interface {
     values: [
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>
-    ]
+      PromiseOrValue<BigNumberish>,
+    ],
   ): string;
   encodeFunctionData(
     functionFragment: "createPool",
@@ -232,46 +232,46 @@ export interface ZK_RFPInterface extends utils.Interface {
       MetadataStruct,
       PromiseOrValue<string>[],
       PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>
-    ]
+      PromiseOrValue<BigNumberish>,
+    ],
   ): string;
   encodeFunctionData(
     functionFragment: "distributeCurrentMilestone",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "getPoolData",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "getPoolRecipients",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "getProfileData",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(functionFragment: "getTime", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "increaseMaxBid",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "poolIdInfo",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "poolIds",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "poolWinner",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(functionFragment: "profileId", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "recipientInfo",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(
     functionFragment: "registerRecipient",
@@ -280,30 +280,30 @@ export interface ZK_RFPInterface extends utils.Interface {
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<string>,
       MetadataStruct,
-      PromiseOrValue<string>[]
-    ]
+      PromiseOrValue<string>[],
+    ],
   ): string;
   encodeFunctionData(
     functionFragment: "registerValidator",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>],
   ): string;
   encodeFunctionData(
     functionFragment: "rejectMilestone",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "setMilestonesToStrategy",
-    values: [PromiseOrValue<BigNumberish>, IStrategy.MilestoneStruct[]]
+    values: [PromiseOrValue<BigNumberish>, IStrategy.MilestoneStruct[]],
   ): string;
   encodeFunctionData(
     functionFragment: "setPoolWinner",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
 
   decodeFunctionResult(functionFragment: "Allo", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "AllocateToRecipient",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "Registry", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "_nonce", data: BytesLike): Result;
@@ -311,24 +311,24 @@ export interface ZK_RFPInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "createPool", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "distributeCurrentMilestone",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getPoolData",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getPoolRecipients",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getProfileData",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "getTime", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "increaseMaxBid",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "poolIdInfo", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "poolIds", data: BytesLike): Result;
@@ -336,27 +336,27 @@ export interface ZK_RFPInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "profileId", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "recipientInfo",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "registerRecipient",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "registerValidator",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "rejectMilestone",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "setMilestonesToStrategy",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "setPoolWinner",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -372,15 +372,15 @@ export interface ZK_RFP extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
+    eventFilter?: TypedEventFilter<TEvent>,
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
+    eventFilter: TypedEventFilter<TEvent>,
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -399,10 +399,10 @@ export interface ZK_RFP extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     Registry(overrides?: CallOverrides): Promise<[string]>;
@@ -413,7 +413,7 @@ export interface ZK_RFP extends BaseContract {
       _poolId: PromiseOrValue<BigNumberish>,
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     createPool(
@@ -422,27 +422,27 @@ export interface ZK_RFP extends BaseContract {
       _managers: PromiseOrValue<string>[],
       _registrationDuration: PromiseOrValue<BigNumberish>,
       _votingDuration: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     distributeCurrentMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     getPoolData(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[ZK_RFP.PoolStructOutput] & { pool: ZK_RFP.PoolStructOutput }>;
 
     getPoolRecipients(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[ZK_RFP.RecipientStructOutput[]]>;
 
     getProfileData(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [IRegistry.ProfileStructOutput] & {
         profile: IRegistry.ProfileStructOutput;
@@ -454,12 +454,12 @@ export interface ZK_RFP extends BaseContract {
     increaseMaxBid(
       _poolId: PromiseOrValue<BigNumberish>,
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     poolIdInfo(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         BigNumber,
@@ -467,7 +467,7 @@ export interface ZK_RFP extends BaseContract {
         BigNumber,
         BigNumber,
         MetadataStructOutput,
-        string
+        string,
       ] & {
         registrationEnds: BigNumber;
         votingEnds: BigNumber;
@@ -480,12 +480,12 @@ export interface ZK_RFP extends BaseContract {
 
     poolIds(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber]>;
 
     poolWinner(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, BigNumber, number, MetadataStructOutput] & {
         recipientAddress: string;
@@ -499,7 +499,7 @@ export interface ZK_RFP extends BaseContract {
 
     recipientInfo(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, BigNumber, number, MetadataStructOutput] & {
         recipientAddress: string;
@@ -515,30 +515,30 @@ export interface ZK_RFP extends BaseContract {
       _name: PromiseOrValue<string>,
       _metadata: MetadataStruct,
       _profileMembers: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     registerValidator(
       _poolId: PromiseOrValue<BigNumberish>,
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     rejectMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     setMilestonesToStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
 
     setPoolWinner(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<ContractTransaction>;
   };
 
@@ -552,10 +552,10 @@ export interface ZK_RFP extends BaseContract {
     _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     _proof_b: [
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     ],
     _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   Registry(overrides?: CallOverrides): Promise<string>;
@@ -566,7 +566,7 @@ export interface ZK_RFP extends BaseContract {
     _poolId: PromiseOrValue<BigNumberish>,
     _uniqueHash: PromiseOrValue<BigNumberish>,
     _commitment: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   createPool(
@@ -575,27 +575,27 @@ export interface ZK_RFP extends BaseContract {
     _managers: PromiseOrValue<string>[],
     _registrationDuration: PromiseOrValue<BigNumberish>,
     _votingDuration: PromiseOrValue<BigNumberish>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   distributeCurrentMilestone(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   getPoolData(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<ZK_RFP.PoolStructOutput>;
 
   getPoolRecipients(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<ZK_RFP.RecipientStructOutput[]>;
 
   getProfileData(
     _profileId: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<IRegistry.ProfileStructOutput>;
 
   getTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -603,12 +603,12 @@ export interface ZK_RFP extends BaseContract {
   increaseMaxBid(
     _poolId: PromiseOrValue<BigNumberish>,
     _maxBid: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   poolIdInfo(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       BigNumber,
@@ -616,7 +616,7 @@ export interface ZK_RFP extends BaseContract {
       BigNumber,
       BigNumber,
       MetadataStructOutput,
-      string
+      string,
     ] & {
       registrationEnds: BigNumber;
       votingEnds: BigNumber;
@@ -629,12 +629,12 @@ export interface ZK_RFP extends BaseContract {
 
   poolIds(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   poolWinner(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [string, BigNumber, number, MetadataStructOutput] & {
       recipientAddress: string;
@@ -648,7 +648,7 @@ export interface ZK_RFP extends BaseContract {
 
   recipientInfo(
     arg0: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [string, BigNumber, number, MetadataStructOutput] & {
       recipientAddress: string;
@@ -664,30 +664,30 @@ export interface ZK_RFP extends BaseContract {
     _name: PromiseOrValue<string>,
     _metadata: MetadataStruct,
     _profileMembers: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   registerValidator(
     _poolId: PromiseOrValue<BigNumberish>,
     _validator: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   rejectMilestone(
     _poolId: PromiseOrValue<BigNumberish>,
     _milestoneId: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   setMilestonesToStrategy(
     _poolId: PromiseOrValue<BigNumberish>,
     _milestones: IStrategy.MilestoneStruct[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   setPoolWinner(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
@@ -701,10 +701,10 @@ export interface ZK_RFP extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     Registry(overrides?: CallOverrides): Promise<string>;
@@ -715,7 +715,7 @@ export interface ZK_RFP extends BaseContract {
       _poolId: PromiseOrValue<BigNumberish>,
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     createPool(
@@ -724,27 +724,27 @@ export interface ZK_RFP extends BaseContract {
       _managers: PromiseOrValue<string>[],
       _registrationDuration: PromiseOrValue<BigNumberish>,
       _votingDuration: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     distributeCurrentMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     getPoolData(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<ZK_RFP.PoolStructOutput>;
 
     getPoolRecipients(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<ZK_RFP.RecipientStructOutput[]>;
 
     getProfileData(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<IRegistry.ProfileStructOutput>;
 
     getTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -752,12 +752,12 @@ export interface ZK_RFP extends BaseContract {
     increaseMaxBid(
       _poolId: PromiseOrValue<BigNumberish>,
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     poolIdInfo(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         BigNumber,
@@ -765,7 +765,7 @@ export interface ZK_RFP extends BaseContract {
         BigNumber,
         BigNumber,
         MetadataStructOutput,
-        string
+        string,
       ] & {
         registrationEnds: BigNumber;
         votingEnds: BigNumber;
@@ -778,12 +778,12 @@ export interface ZK_RFP extends BaseContract {
 
     poolIds(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     poolWinner(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, BigNumber, number, MetadataStructOutput] & {
         recipientAddress: string;
@@ -797,7 +797,7 @@ export interface ZK_RFP extends BaseContract {
 
     recipientInfo(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, BigNumber, number, MetadataStructOutput] & {
         recipientAddress: string;
@@ -813,30 +813,30 @@ export interface ZK_RFP extends BaseContract {
       _name: PromiseOrValue<string>,
       _metadata: MetadataStruct,
       _profileMembers: PromiseOrValue<string>[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     registerValidator(
       _poolId: PromiseOrValue<BigNumberish>,
       _validator: PromiseOrValue<string>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     rejectMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     setMilestonesToStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     setPoolWinner(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
   };
 
@@ -853,10 +853,10 @@ export interface ZK_RFP extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     Registry(overrides?: CallOverrides): Promise<BigNumber>;
@@ -867,7 +867,7 @@ export interface ZK_RFP extends BaseContract {
       _poolId: PromiseOrValue<BigNumberish>,
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     createPool(
@@ -876,27 +876,27 @@ export interface ZK_RFP extends BaseContract {
       _managers: PromiseOrValue<string>[],
       _registrationDuration: PromiseOrValue<BigNumberish>,
       _votingDuration: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     distributeCurrentMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     getPoolData(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getPoolRecipients(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getProfileData(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -904,29 +904,29 @@ export interface ZK_RFP extends BaseContract {
     increaseMaxBid(
       _poolId: PromiseOrValue<BigNumberish>,
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     poolIdInfo(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     poolIds(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     poolWinner(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     profileId(overrides?: CallOverrides): Promise<BigNumber>;
 
     recipientInfo(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     registerRecipient(
@@ -935,30 +935,30 @@ export interface ZK_RFP extends BaseContract {
       _name: PromiseOrValue<string>,
       _metadata: MetadataStruct,
       _profileMembers: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     registerValidator(
       _poolId: PromiseOrValue<BigNumberish>,
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     rejectMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     setMilestonesToStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
 
     setPoolWinner(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<BigNumber>;
   };
 
@@ -973,10 +973,10 @@ export interface ZK_RFP extends BaseContract {
       _proof_a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       _proof_b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       ],
       _proof_c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     Registry(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -987,7 +987,7 @@ export interface ZK_RFP extends BaseContract {
       _poolId: PromiseOrValue<BigNumberish>,
       _uniqueHash: PromiseOrValue<BigNumberish>,
       _commitment: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     createPool(
@@ -996,27 +996,27 @@ export interface ZK_RFP extends BaseContract {
       _managers: PromiseOrValue<string>[],
       _registrationDuration: PromiseOrValue<BigNumberish>,
       _votingDuration: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     distributeCurrentMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     getPoolData(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getPoolRecipients(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getProfileData(
       _profileId: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getTime(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1024,29 +1024,29 @@ export interface ZK_RFP extends BaseContract {
     increaseMaxBid(
       _poolId: PromiseOrValue<BigNumberish>,
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     poolIdInfo(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     poolIds(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     poolWinner(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     profileId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     recipientInfo(
       arg0: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     registerRecipient(
@@ -1055,30 +1055,30 @@ export interface ZK_RFP extends BaseContract {
       _name: PromiseOrValue<string>,
       _metadata: MetadataStruct,
       _profileMembers: PromiseOrValue<string>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     registerValidator(
       _poolId: PromiseOrValue<BigNumberish>,
       _validator: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     rejectMilestone(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     setMilestonesToStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
 
     setPoolWinner(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> }
+      overrides?: Overrides & { from?: PromiseOrValue<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

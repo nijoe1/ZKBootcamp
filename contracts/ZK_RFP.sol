@@ -130,7 +130,7 @@ contract ZK_RFP is Constants {
             _members
         );
 
-        ZKTreeVote newContract = new ZKTreeVote(levels, hasher, verifier, _managers);
+        ZKTreeVote newContract = new ZKTreeVote(20, hasher, verifier, _managers);
 
         poolIdInfo[poolID] = Pool({
             registrationEnds: _registrationEnds,
@@ -205,6 +205,28 @@ contract ZK_RFP is Constants {
         );
     }
 
+    function setPoolWinner(uint256 _poolId) external {
+        require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
+        EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
+        ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
+        Recipient memory recipient;
+        uint256 maxVotes = 0;
+        uint256 tempVotes;
+        bytes32 winner;
+        for (uint256 i = 0; i < recipients.length(); i++) {
+            bytes32 recipientId = recipients.at(i);
+            recipient = recipientInfo[recipientId];
+            tempVotes = pool.getRecipientVotes(recipient.recipientAddress);
+            if (tempVotes > maxVotes) {
+                maxVotes = tempVotes;
+                winner = recipientId;
+            }
+        }
+        recipient = recipientInfo[winner];
+        poolWinner[_poolId] = recipient;
+        Allo.allocate(_poolId, abi.encode(recipient.recipientAddress, recipient.proposalBid));
+    }
+
     // ================================ Strategy Functions ================================
 
     function setMilestonesToStrategy(
@@ -242,28 +264,6 @@ contract ZK_RFP is Constants {
         IAllo.Pool memory poolData = Allo.getPool(_poolId);
 
         poolData.strategy.rejectMilestone(_milestoneId);
-    }
-
-    function setPoolWinner(uint256 _poolId) external {
-        require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
-        EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
-        ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
-        Recipient memory recipient;
-        uint256 maxVotes = 0;
-        uint256 tempVotes;
-        bytes32 winner;
-        for (uint256 i = 0; i < recipients.length(); i++) {
-            bytes32 recipientId = recipients.at(i);
-            recipient = recipientInfo[recipientId];
-            tempVotes = pool.getRecipientVotes(recipient.recipientAddress);
-            if (tempVotes > maxVotes) {
-                maxVotes = tempVotes;
-                winner = recipientId;
-            }
-        }
-        recipient = recipientInfo[winner];
-        poolWinner[_poolId] = recipient;
-        Allo.allocate(_poolId, abi.encode(recipient.recipientAddress, recipient.proposalBid));
     }
 
     function increaseMaxBid(

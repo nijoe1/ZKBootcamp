@@ -52,79 +52,79 @@ export interface MerkleTreeWithHistoryInterface extends utils.Interface {
       | "levels"
       | "nextIndex"
       | "roots"
-      | "zeros"
+      | "zeros",
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "FIELD_SIZE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "ROOT_HISTORY_SIZE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "ZERO_VALUE",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "currentRootIndex",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "filledSubtrees",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "getLastRoot",
-    values?: undefined
+    values?: undefined,
   ): string;
   encodeFunctionData(
     functionFragment: "hashLeftRight",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(functionFragment: "hasher", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "isKnownRoot",
-    values: [PromiseOrValue<BytesLike>]
+    values: [PromiseOrValue<BytesLike>],
   ): string;
   encodeFunctionData(functionFragment: "levels", values?: undefined): string;
   encodeFunctionData(functionFragment: "nextIndex", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "roots",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
   encodeFunctionData(
     functionFragment: "zeros",
-    values: [PromiseOrValue<BigNumberish>]
+    values: [PromiseOrValue<BigNumberish>],
   ): string;
 
   decodeFunctionResult(functionFragment: "FIELD_SIZE", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "ROOT_HISTORY_SIZE",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "ZERO_VALUE", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "currentRootIndex",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "filledSubtrees",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "getLastRoot",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
     functionFragment: "hashLeftRight",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "hasher", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isKnownRoot",
-    data: BytesLike
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(functionFragment: "levels", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "nextIndex", data: BytesLike): Result;
@@ -144,15 +144,15 @@ export interface MerkleTreeWithHistory extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>
+    eventFilter?: TypedEventFilter<TEvent>,
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>
+    eventFilter: TypedEventFilter<TEvent>,
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -171,7 +171,7 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     getLastRoot(overrides?: CallOverrides): Promise<[string]>;
@@ -179,14 +179,14 @@ export interface MerkleTreeWithHistory extends BaseContract {
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     hasher(overrides?: CallOverrides): Promise<[string]>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     levels(overrides?: CallOverrides): Promise<[number]>;
@@ -195,12 +195,12 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
   };
 
@@ -214,7 +214,7 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
   filledSubtrees(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   getLastRoot(overrides?: CallOverrides): Promise<string>;
@@ -222,14 +222,14 @@ export interface MerkleTreeWithHistory extends BaseContract {
   hashLeftRight(
     _left: PromiseOrValue<BigNumberish>,
     _right: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   hasher(overrides?: CallOverrides): Promise<string>;
 
   isKnownRoot(
     _root: PromiseOrValue<BytesLike>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   levels(overrides?: CallOverrides): Promise<number>;
@@ -238,12 +238,12 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
   roots(
     arg0: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   zeros(
     i: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   callStatic: {
@@ -257,7 +257,7 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getLastRoot(overrides?: CallOverrides): Promise<string>;
@@ -265,14 +265,14 @@ export interface MerkleTreeWithHistory extends BaseContract {
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     hasher(overrides?: CallOverrides): Promise<string>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     levels(overrides?: CallOverrides): Promise<number>;
@@ -281,12 +281,12 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
   };
 
@@ -303,7 +303,7 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLastRoot(overrides?: CallOverrides): Promise<BigNumber>;
@@ -311,14 +311,14 @@ export interface MerkleTreeWithHistory extends BaseContract {
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     hasher(overrides?: CallOverrides): Promise<BigNumber>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     levels(overrides?: CallOverrides): Promise<BigNumber>;
@@ -327,12 +327,12 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -347,7 +347,7 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     filledSubtrees(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getLastRoot(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -355,14 +355,14 @@ export interface MerkleTreeWithHistory extends BaseContract {
     hashLeftRight(
       _left: PromiseOrValue<BigNumberish>,
       _right: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     hasher(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     isKnownRoot(
       _root: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     levels(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -371,12 +371,12 @@ export interface MerkleTreeWithHistory extends BaseContract {
 
     roots(
       arg0: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     zeros(
       i: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

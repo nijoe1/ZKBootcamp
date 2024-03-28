@@ -472,7 +472,7 @@ type ZKTreeVoteConstructorParams =
   | ConstructorParameters<typeof ContractFactory>;
 
 const isSuperArgs = (
-  xs: ZKTreeVoteConstructorParams
+  xs: ZKTreeVoteConstructorParams,
 ): xs is ConstructorParameters<typeof ContractFactory> => xs.length > 1;
 
 export class ZKTreeVote__factory extends ContractFactory {
@@ -489,14 +489,14 @@ export class ZKTreeVote__factory extends ContractFactory {
     _hasher: PromiseOrValue<string>,
     _verifier: PromiseOrValue<string>,
     _validators: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): Promise<ZKTreeVote> {
     return super.deploy(
       _levels,
       _hasher,
       _verifier,
       _validators,
-      overrides || {}
+      overrides || {},
     ) as Promise<ZKTreeVote>;
   }
   override getDeployTransaction(
@@ -504,14 +504,14 @@ export class ZKTreeVote__factory extends ContractFactory {
     _hasher: PromiseOrValue<string>,
     _verifier: PromiseOrValue<string>,
     _validators: PromiseOrValue<string>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> }
+    overrides?: Overrides & { from?: PromiseOrValue<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(
       _levels,
       _hasher,
       _verifier,
       _validators,
-      overrides || {}
+      overrides || {},
     );
   }
   override attach(address: string): ZKTreeVote {
@@ -528,7 +528,7 @@ export class ZKTreeVote__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): ZKTreeVote {
     return new Contract(address, _abi, signerOrProvider) as ZKTreeVote;
   }
