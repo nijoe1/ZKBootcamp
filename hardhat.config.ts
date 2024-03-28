@@ -15,15 +15,14 @@ module.exports = {
         enabled: true,
         runs: 200,
       },
-      viaIR: true,
     },
   },
-  // defaultNetwork: "sepolia",
+  defaultNetwork: "sepolia",
 
   networks: {
     sepolia: {
-      chainId: 11155111,
-      url: "https://ethereum-sepolia-rpc.publicnode.com",
+      chainId: 421614,
+      url: "https://arbitrum-sepolia.blockpi.network/v1/rpc/public		",
       accounts: [PRIVATE_KEY],
     },
   },

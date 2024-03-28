@@ -38,7 +38,7 @@
     "qrcode": "^1.5.1",
     "vue": "^3.3.4",
     "vue-facing-decorator": "^2.1.13",
-    "zk-merkle-tree": "^1.0.2"
+    "zk-merkle-tree": "^1.0.4"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",

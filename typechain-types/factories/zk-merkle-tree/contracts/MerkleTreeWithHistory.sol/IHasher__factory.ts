@@ -53,7 +53,7 @@ export class IHasher__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider,
+    signerOrProvider: Signer | Provider
   ): IHasher {
     return new Contract(address, _abi, signerOrProvider) as IHasher;
   }

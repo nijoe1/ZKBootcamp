@@ -3,5 +3,4 @@
 /* eslint-disable */
 export * as zkVote from "./ZKVote";
 export * as interfaces from "./interfaces";
-export { Verifier__factory } from "./Verifier__factory";
 export { ZK_RFP__factory } from "./ZK_RFP__factory";

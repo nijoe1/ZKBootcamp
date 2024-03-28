@@ -34,16 +34,16 @@ export interface IVerifierInterface extends utils.Interface {
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
       ],
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-    ],
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
+    ]
   ): string;
 
   decodeFunctionResult(
     functionFragment: "verifyProof",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
 
   events: {};
@@ -59,15 +59,15 @@ export interface IVerifier extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined,
+    toBlock?: string | number | undefined
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>,
+    eventFilter?: TypedEventFilter<TEvent>
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>,
+    eventFilter: TypedEventFilter<TEvent>
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -80,11 +80,11 @@ export interface IVerifier extends BaseContract {
       a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
       ],
       c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       input: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[boolean] & { r: boolean }>;
   };
 
@@ -92,11 +92,11 @@ export interface IVerifier extends BaseContract {
     a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     b: [
       [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+      [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
     ],
     c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
     input: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<boolean>;
 
   callStatic: {
@@ -104,11 +104,11 @@ export interface IVerifier extends BaseContract {
       a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
       ],
       c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       input: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<boolean>;
   };
 
@@ -119,11 +119,11 @@ export interface IVerifier extends BaseContract {
       a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
       ],
       c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       input: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
 
@@ -132,11 +132,11 @@ export interface IVerifier extends BaseContract {
       a: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       b: [
         [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+        [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
       ],
       c: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
       input: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }

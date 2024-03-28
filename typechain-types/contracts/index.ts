@@ -5,5 +5,4 @@ import type * as zkVote from "./ZKVote";
 export type { zkVote };
 import type * as interfaces from "./interfaces";
 export type { interfaces };
-export type { Verifier } from "./Verifier";
 export type { ZK_RFP } from "./ZK_RFP";

@@ -6036,7 +6036,7 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zk-merkle-tree@^1.0.2:
+zk-merkle-tree@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/zk-merkle-tree/-/zk-merkle-tree-1.0.4.tgz#8dc1d66cc8dc86bc6f2fe53b1525be0de17df25b"
   integrity sha512-scfFkj3K8h69aznS5lOnAGXyNoMjIb5Ni/G2b5datkS+CIQEdqZs4Hz28M+a9L981i5yXVW+K/ikMf6MWMuc0A==

@@ -54,7 +54,7 @@ export declare namespace IAllo {
     string,
     MetadataStructOutput,
     string,
-    string,
+    string
   ] & {
     profileId: string;
     strategy: string;
@@ -128,28 +128,28 @@ export interface IAlloInterface extends utils.Interface {
       | "updatePercentFee"
       | "updatePoolMetadata"
       | "updateRegistry"
-      | "updateTreasury",
+      | "updateTreasury"
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "addPoolManager",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "addToCloneableStrategies",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "allocate",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>]
   ): string;
   encodeFunctionData(
     functionFragment: "batchAllocate",
-    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<BytesLike>[]],
+    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<BytesLike>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "batchRegisterRecipient",
-    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<BytesLike>[]],
+    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<BytesLike>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "createPool",
@@ -160,8 +160,8 @@ export interface IAlloInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<BigNumberish>,
       MetadataStruct,
-      PromiseOrValue<string>[],
-    ],
+      PromiseOrValue<string>[]
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "createPoolWithCustomStrategy",
@@ -172,48 +172,48 @@ export interface IAlloInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<BigNumberish>,
       MetadataStruct,
-      PromiseOrValue<string>[],
-    ],
+      PromiseOrValue<string>[]
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "distribute",
     values: [
       PromiseOrValue<BigNumberish>,
       PromiseOrValue<string>[],
-      PromiseOrValue<BytesLike>,
-    ],
+      PromiseOrValue<BytesLike>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "fundPool",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "getBaseFee",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "getFeeDenominator",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "getPercentFee",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "getPool",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "getRegistry",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "getStrategy",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "getTreasury",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "initialize",
@@ -222,152 +222,152 @@ export interface IAlloInterface extends utils.Interface {
       PromiseOrValue<string>,
       PromiseOrValue<string>,
       PromiseOrValue<BigNumberish>,
-      PromiseOrValue<BigNumberish>,
-    ],
+      PromiseOrValue<BigNumberish>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "isCloneableStrategy",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "isPoolAdmin",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "isPoolManager",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "recoverFunds",
-    values: [PromiseOrValue<string>, PromiseOrValue<string>],
+    values: [PromiseOrValue<string>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "registerRecipient",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>]
   ): string;
   encodeFunctionData(
     functionFragment: "removeFromCloneableStrategies",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "removePoolManager",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "updateBaseFee",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "updatePercentFee",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "updatePoolMetadata",
-    values: [PromiseOrValue<BigNumberish>, MetadataStruct],
+    values: [PromiseOrValue<BigNumberish>, MetadataStruct]
   ): string;
   encodeFunctionData(
     functionFragment: "updateRegistry",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "updateTreasury",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
 
   decodeFunctionResult(
     functionFragment: "addPoolManager",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "addToCloneableStrategies",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "allocate", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "batchAllocate",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "batchRegisterRecipient",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "createPool", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "createPoolWithCustomStrategy",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "distribute", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "fundPool", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "getBaseFee", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getFeeDenominator",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "getPercentFee",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getPool", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getRegistry",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "getStrategy",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "getTreasury",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isCloneableStrategy",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "isPoolAdmin",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "isPoolManager",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "recoverFunds",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "registerRecipient",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "removeFromCloneableStrategies",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "removePoolManager",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateBaseFee",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "updatePercentFee",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "updatePoolMetadata",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateRegistry",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "updateTreasury",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
 
   events: {
@@ -517,15 +517,15 @@ export interface IAllo extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined,
+    toBlock?: string | number | undefined
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>,
+    eventFilter?: TypedEventFilter<TEvent>
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>,
+    eventFilter: TypedEventFilter<TEvent>
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -537,30 +537,30 @@ export interface IAllo extends BaseContract {
     addPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     addToCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     allocate(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     batchAllocate(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _datas: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     batchRegisterRecipient(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     createPool(
@@ -571,7 +571,7 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     createPoolWithCustomStrategy(
@@ -582,20 +582,20 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     distribute(
       _poolId: PromiseOrValue<BigNumberish>,
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     fundPool(
       _poolId: PromiseOrValue<BigNumberish>,
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     getBaseFee(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -606,14 +606,14 @@ export interface IAllo extends BaseContract {
 
     getPool(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[IAllo.PoolStructOutput]>;
 
     getRegistry(overrides?: CallOverrides): Promise<[string]>;
 
     getStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[string]>;
 
     getTreasury(overrides?: CallOverrides): Promise<[string]>;
@@ -624,103 +624,103 @@ export interface IAllo extends BaseContract {
       _treasury: PromiseOrValue<string>,
       _percentFee: PromiseOrValue<BigNumberish>,
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     isCloneableStrategy(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     isPoolAdmin(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     isPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     registerRecipient(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     removeFromCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     removePoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     updateBaseFee(
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     updatePercentFee(
       _percentFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     updatePoolMetadata(
       _poolId: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     updateRegistry(
       _registry: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     updateTreasury(
       _treasury: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
 
   addPoolManager(
     _poolId: PromiseOrValue<BigNumberish>,
     _manager: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   addToCloneableStrategies(
     _strategy: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   allocate(
     _poolId: PromiseOrValue<BigNumberish>,
     _data: PromiseOrValue<BytesLike>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   batchAllocate(
     _poolIds: PromiseOrValue<BigNumberish>[],
     _datas: PromiseOrValue<BytesLike>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   batchRegisterRecipient(
     _poolIds: PromiseOrValue<BigNumberish>[],
     _data: PromiseOrValue<BytesLike>[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   createPool(
@@ -731,7 +731,7 @@ export interface IAllo extends BaseContract {
     _amount: PromiseOrValue<BigNumberish>,
     _metadata: MetadataStruct,
     _managers: PromiseOrValue<string>[],
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   createPoolWithCustomStrategy(
@@ -742,20 +742,20 @@ export interface IAllo extends BaseContract {
     _amount: PromiseOrValue<BigNumberish>,
     _metadata: MetadataStruct,
     _managers: PromiseOrValue<string>[],
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   distribute(
     _poolId: PromiseOrValue<BigNumberish>,
     _recipientIds: PromiseOrValue<string>[],
     _data: PromiseOrValue<BytesLike>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   fundPool(
     _poolId: PromiseOrValue<BigNumberish>,
     _amount: PromiseOrValue<BigNumberish>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   getBaseFee(overrides?: CallOverrides): Promise<BigNumber>;
@@ -766,14 +766,14 @@ export interface IAllo extends BaseContract {
 
   getPool(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<IAllo.PoolStructOutput>;
 
   getRegistry(overrides?: CallOverrides): Promise<string>;
 
   getStrategy(
     _poolId: PromiseOrValue<BigNumberish>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<string>;
 
   getTreasury(overrides?: CallOverrides): Promise<string>;
@@ -784,103 +784,103 @@ export interface IAllo extends BaseContract {
     _treasury: PromiseOrValue<string>,
     _percentFee: PromiseOrValue<BigNumberish>,
     _baseFee: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   isCloneableStrategy(
     _strategy: PromiseOrValue<string>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<boolean>;
 
   isPoolAdmin(
     _poolId: PromiseOrValue<BigNumberish>,
     _address: PromiseOrValue<string>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<boolean>;
 
   isPoolManager(
     _poolId: PromiseOrValue<BigNumberish>,
     _address: PromiseOrValue<string>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<boolean>;
 
   recoverFunds(
     _token: PromiseOrValue<string>,
     _recipient: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   registerRecipient(
     _poolId: PromiseOrValue<BigNumberish>,
     _data: PromiseOrValue<BytesLike>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   removeFromCloneableStrategies(
     _strategy: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   removePoolManager(
     _poolId: PromiseOrValue<BigNumberish>,
     _manager: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   updateBaseFee(
     _baseFee: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   updatePercentFee(
     _percentFee: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   updatePoolMetadata(
     _poolId: PromiseOrValue<BigNumberish>,
     _metadata: MetadataStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   updateRegistry(
     _registry: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   updateTreasury(
     _treasury: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     addPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     addToCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     allocate(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     batchAllocate(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _datas: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     batchRegisterRecipient(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<string[]>;
 
     createPool(
@@ -891,7 +891,7 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     createPoolWithCustomStrategy(
@@ -902,20 +902,20 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     distribute(
       _poolId: PromiseOrValue<BigNumberish>,
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     fundPool(
       _poolId: PromiseOrValue<BigNumberish>,
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     getBaseFee(overrides?: CallOverrides): Promise<BigNumber>;
@@ -926,14 +926,14 @@ export interface IAllo extends BaseContract {
 
     getPool(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<IAllo.PoolStructOutput>;
 
     getRegistry(overrides?: CallOverrides): Promise<string>;
 
     getStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<string>;
 
     getTreasury(overrides?: CallOverrides): Promise<string>;
@@ -944,91 +944,91 @@ export interface IAllo extends BaseContract {
       _treasury: PromiseOrValue<string>,
       _percentFee: PromiseOrValue<BigNumberish>,
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     isCloneableStrategy(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<boolean>;
 
     isPoolAdmin(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<boolean>;
 
     isPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<boolean>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     registerRecipient(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<string>;
 
     removeFromCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     removePoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     updateBaseFee(
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     updatePercentFee(
       _percentFee: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     updatePoolMetadata(
       _poolId: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     updateRegistry(
       _registry: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     updateTreasury(
       _treasury: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
   };
 
   filters: {
     "BaseFeePaid(uint256,uint256)"(
       poolId?: PromiseOrValue<BigNumberish> | null,
-      amount?: null,
+      amount?: null
     ): BaseFeePaidEventFilter;
     BaseFeePaid(
       poolId?: PromiseOrValue<BigNumberish> | null,
-      amount?: null,
+      amount?: null
     ): BaseFeePaidEventFilter;
 
     "BaseFeeUpdated(uint256)"(baseFee?: null): BaseFeeUpdatedEventFilter;
     BaseFeeUpdated(baseFee?: null): BaseFeeUpdatedEventFilter;
 
     "PercentFeeUpdated(uint256)"(
-      percentFee?: null,
+      percentFee?: null
     ): PercentFeeUpdatedEventFilter;
     PercentFeeUpdated(percentFee?: null): PercentFeeUpdatedEventFilter;
 
@@ -1038,7 +1038,7 @@ export interface IAllo extends BaseContract {
       strategy?: null,
       token?: null,
       amount?: null,
-      metadata?: null,
+      metadata?: null
     ): PoolCreatedEventFilter;
     PoolCreated(
       poolId?: PromiseOrValue<BigNumberish> | null,
@@ -1046,27 +1046,27 @@ export interface IAllo extends BaseContract {
       strategy?: null,
       token?: null,
       amount?: null,
-      metadata?: null,
+      metadata?: null
     ): PoolCreatedEventFilter;
 
     "PoolFunded(uint256,uint256,uint256)"(
       poolId?: PromiseOrValue<BigNumberish> | null,
       amount?: null,
-      fee?: null,
+      fee?: null
     ): PoolFundedEventFilter;
     PoolFunded(
       poolId?: PromiseOrValue<BigNumberish> | null,
       amount?: null,
-      fee?: null,
+      fee?: null
     ): PoolFundedEventFilter;
 
     "PoolMetadataUpdated(uint256,tuple)"(
       poolId?: PromiseOrValue<BigNumberish> | null,
-      metadata?: null,
+      metadata?: null
     ): PoolMetadataUpdatedEventFilter;
     PoolMetadataUpdated(
       poolId?: PromiseOrValue<BigNumberish> | null,
-      metadata?: null,
+      metadata?: null
     ): PoolMetadataUpdatedEventFilter;
 
     "RegistryUpdated(address)"(registry?: null): RegistryUpdatedEventFilter;
@@ -1086,30 +1086,30 @@ export interface IAllo extends BaseContract {
     addPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     addToCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     allocate(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     batchAllocate(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _datas: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     batchRegisterRecipient(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     createPool(
@@ -1120,7 +1120,7 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     createPoolWithCustomStrategy(
@@ -1131,20 +1131,20 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     distribute(
       _poolId: PromiseOrValue<BigNumberish>,
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     fundPool(
       _poolId: PromiseOrValue<BigNumberish>,
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     getBaseFee(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1155,14 +1155,14 @@ export interface IAllo extends BaseContract {
 
     getPool(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getRegistry(overrides?: CallOverrides): Promise<BigNumber>;
 
     getStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getTreasury(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1173,73 +1173,73 @@ export interface IAllo extends BaseContract {
       _treasury: PromiseOrValue<string>,
       _percentFee: PromiseOrValue<BigNumberish>,
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     isCloneableStrategy(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     isPoolAdmin(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     isPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     registerRecipient(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     removeFromCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     removePoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     updateBaseFee(
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     updatePercentFee(
       _percentFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     updatePoolMetadata(
       _poolId: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     updateRegistry(
       _registry: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     updateTreasury(
       _treasury: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
 
@@ -1247,30 +1247,30 @@ export interface IAllo extends BaseContract {
     addPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     addToCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     allocate(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     batchAllocate(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _datas: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     batchRegisterRecipient(
       _poolIds: PromiseOrValue<BigNumberish>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     createPool(
@@ -1281,7 +1281,7 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     createPoolWithCustomStrategy(
@@ -1292,20 +1292,20 @@ export interface IAllo extends BaseContract {
       _amount: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
       _managers: PromiseOrValue<string>[],
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     distribute(
       _poolId: PromiseOrValue<BigNumberish>,
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     fundPool(
       _poolId: PromiseOrValue<BigNumberish>,
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     getBaseFee(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1316,14 +1316,14 @@ export interface IAllo extends BaseContract {
 
     getPool(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getRegistry(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     getStrategy(
       _poolId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getTreasury(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1334,73 +1334,73 @@ export interface IAllo extends BaseContract {
       _treasury: PromiseOrValue<string>,
       _percentFee: PromiseOrValue<BigNumberish>,
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     isCloneableStrategy(
       _strategy: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     isPoolAdmin(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     isPoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _address: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     recoverFunds(
       _token: PromiseOrValue<string>,
       _recipient: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     registerRecipient(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     removeFromCloneableStrategies(
       _strategy: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     removePoolManager(
       _poolId: PromiseOrValue<BigNumberish>,
       _manager: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     updateBaseFee(
       _baseFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     updatePercentFee(
       _percentFee: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     updatePoolMetadata(
       _poolId: PromiseOrValue<BigNumberish>,
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     updateRegistry(
       _registry: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     updateTreasury(
       _treasury: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };
 }

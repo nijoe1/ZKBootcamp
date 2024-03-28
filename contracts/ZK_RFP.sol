@@ -122,9 +122,9 @@ contract ZK_RFP is Constants {
 
         uint256 poolID = Allo.createPool{value:msg.value}(
             profileId,
-            strategy_implementation,
+            0x8Def91f220f3D1C16D406097ffb0dAEe0732772f,
             _initStrategyData,
-            NATIVE,
+            0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE,
             msg.value,
             _metadata,
             _members
@@ -152,11 +152,11 @@ contract ZK_RFP is Constants {
         Metadata memory _metadata,
         address[] memory _profileMembers
     ) external {
-        require(poolIdInfo[_poolId].registrationEnds >= block.timestamp, "Registration is closed!");
+        // require(poolIdInfo[_poolId].registrationEnds >= block.timestamp, "Registration is closed!");
 
-        bytes32 _profileId = Registry.createProfile(++_nonce, _name, _metadata, msg.sender, _profileMembers);
+        bytes32 _profileId = Registry.createProfile(++_nonce, _name, _metadata, address(this), _profileMembers);
         address anchor = getProfileData(_profileId).anchor;
-        bytes memory _data = abi.encode(anchor, address(0),_proposalBid,  _metadata);
+        bytes memory _data = abi.encode(anchor, msg.sender,_proposalBid,  _metadata);
 
         recipientInfo[_profileId] = Recipient({
             recipientAddress: msg.sender,
@@ -192,6 +192,7 @@ contract ZK_RFP is Constants {
         uint[2] memory _proof_c
     ) external {
         require(poolIdInfo[_poolId].votingEnds >= block.timestamp, "Only validator can vote!");
+        // require(poolIdToRecipients[_poolId].contains(_recipient), "Recipient not registered!");
 
         ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
 
@@ -206,7 +207,7 @@ contract ZK_RFP is Constants {
     }
 
     function setPoolWinner(uint256 _poolId) external {
-        require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
+        // require(poolIdInfo[_poolId].votingEnds <= block.timestamp, "Voting is still ongoing!");
         EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
         ZKTreeVote pool = poolIdInfo[_poolId].privateVoteContract;
         Recipient memory recipient;
@@ -298,6 +299,15 @@ contract ZK_RFP is Constants {
         return recipientIds;
     }
 
+    function getPoolRecipientAddresses(uint256 _poolId) external view returns (address[] memory) {
+        EnumerableSet.Bytes32Set storage recipients = poolIdToRecipients[_poolId];
+        address[] memory recipientIds = new address[](recipients.length());
+        for (uint256 i = 0; i < recipients.length(); i++) {
+            recipientIds[i] = getProfileData(recipients.at(i)).anchor;
+        }
+        return recipientIds;
+    }
+
     function getProfileData(
         bytes32 _profileId
     ) public view returns (IRegistry.Profile memory profile) {
@@ -308,6 +318,12 @@ contract ZK_RFP is Constants {
         uint256 _poolId
     ) public view returns (Pool memory pool) {
         pool = poolIdInfo[_poolId];
+    }
+
+    function getPoolZKTreeVote(
+        uint256 _poolId
+    ) public view returns (address) {
+        return address(poolIdInfo[_poolId].privateVoteContract);
     }
 
     function getTime() public view returns (uint256) {

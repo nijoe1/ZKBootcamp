@@ -51,6 +51,7 @@ contract ZKTreeVote is ZKTree {
         uint[2][2] memory _proof_b,
         uint[2] memory _proof_c
     ) external {
+        require(owner == msg.sender, "Only parent contract can call!");
         _nullify(
             bytes32(_nullifier),
             bytes32(_root),

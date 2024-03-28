@@ -58,7 +58,7 @@ export declare namespace IStrategy {
   export type MilestoneStructOutput = [
     BigNumber,
     MetadataStructOutput,
-    number,
+    number
   ] & {
     amountPercentage: BigNumber;
     metadata: MetadataStructOutput;
@@ -105,74 +105,74 @@ export interface IStrategyInterface extends utils.Interface {
       | "registerRecipient"
       | "rejectMilestone"
       | "setMilestones"
-      | "submitUpcomingMilestone",
+      | "submitUpcomingMilestone"
   ): FunctionFragment;
 
   encodeFunctionData(
     functionFragment: "allocate",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "distribute",
     values: [
       PromiseOrValue<string>[],
       PromiseOrValue<BytesLike>,
-      PromiseOrValue<string>,
-    ],
+      PromiseOrValue<string>
+    ]
   ): string;
   encodeFunctionData(functionFragment: "getAllo", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "getPayouts",
-    values: [PromiseOrValue<string>[], PromiseOrValue<BytesLike>[]],
+    values: [PromiseOrValue<string>[], PromiseOrValue<BytesLike>[]]
   ): string;
   encodeFunctionData(
     functionFragment: "getPoolAmount",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "getPoolId", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "getRecipientStatus",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "getStrategyId",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "increaseMaxBid",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "increasePoolAmount",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "initialize",
-    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>],
+    values: [PromiseOrValue<BigNumberish>, PromiseOrValue<BytesLike>]
   ): string;
   encodeFunctionData(
     functionFragment: "isPoolActive",
-    values?: undefined,
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "isValidAllocator",
-    values: [PromiseOrValue<string>],
+    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "registerRecipient",
-    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>],
+    values: [PromiseOrValue<BytesLike>, PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "rejectMilestone",
-    values: [PromiseOrValue<BigNumberish>],
+    values: [PromiseOrValue<BigNumberish>]
   ): string;
   encodeFunctionData(
     functionFragment: "setMilestones",
-    values: [IStrategy.MilestoneStruct[]],
+    values: [IStrategy.MilestoneStruct[]]
   ): string;
   encodeFunctionData(
     functionFragment: "submitUpcomingMilestone",
-    values: [MetadataStruct],
+    values: [MetadataStruct]
   ): string;
 
   decodeFunctionResult(functionFragment: "allocate", data: BytesLike): Result;
@@ -181,49 +181,49 @@ export interface IStrategyInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "getPayouts", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getPoolAmount",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getPoolId", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "getRecipientStatus",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "getStrategyId",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "increaseMaxBid",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "increasePoolAmount",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isPoolActive",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "isValidAllocator",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "registerRecipient",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "rejectMilestone",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "setMilestones",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "submitUpcomingMilestone",
-    data: BytesLike,
+    data: BytesLike
   ): Result;
 
   events: {
@@ -307,15 +307,15 @@ export interface IStrategy extends BaseContract {
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined,
+    toBlock?: string | number | undefined
   ): Promise<Array<TEvent>>;
 
   listeners<TEvent extends TypedEvent>(
-    eventFilter?: TypedEventFilter<TEvent>,
+    eventFilter?: TypedEventFilter<TEvent>
   ): Array<TypedListener<TEvent>>;
   listeners(eventName?: string): Array<Listener>;
   removeAllListeners<TEvent extends TypedEvent>(
-    eventFilter: TypedEventFilter<TEvent>,
+    eventFilter: TypedEventFilter<TEvent>
   ): this;
   removeAllListeners(eventName?: string): this;
   off: OnEvent<this>;
@@ -327,14 +327,14 @@ export interface IStrategy extends BaseContract {
     allocate(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     distribute(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     getAllo(overrides?: CallOverrides): Promise<[string]>;
@@ -342,7 +342,7 @@ export interface IStrategy extends BaseContract {
     getPayouts(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[IStrategy.PayoutSummaryStructOutput[]]>;
 
     getPoolAmount(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -351,69 +351,69 @@ export interface IStrategy extends BaseContract {
 
     getRecipientStatus(
       _recipientId: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[number]>;
 
     getStrategyId(overrides?: CallOverrides): Promise<[string]>;
 
     increaseMaxBid(
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     increasePoolAmount(
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     initialize(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     isPoolActive(
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     isValidAllocator(
       _allocator: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<[boolean]>;
 
     registerRecipient(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     rejectMilestone(
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     setMilestones(
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
     submitUpcomingMilestone(
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
   };
 
   allocate(
     _data: PromiseOrValue<BytesLike>,
     _sender: PromiseOrValue<string>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   distribute(
     _recipientIds: PromiseOrValue<string>[],
     _data: PromiseOrValue<BytesLike>,
     _sender: PromiseOrValue<string>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   getAllo(overrides?: CallOverrides): Promise<string>;
@@ -421,7 +421,7 @@ export interface IStrategy extends BaseContract {
   getPayouts(
     _recipientIds: PromiseOrValue<string>[],
     _data: PromiseOrValue<BytesLike>[],
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<IStrategy.PayoutSummaryStructOutput[]>;
 
   getPoolAmount(overrides?: CallOverrides): Promise<BigNumber>;
@@ -430,69 +430,69 @@ export interface IStrategy extends BaseContract {
 
   getRecipientStatus(
     _recipientId: PromiseOrValue<string>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<number>;
 
   getStrategyId(overrides?: CallOverrides): Promise<string>;
 
   increaseMaxBid(
     _maxBid: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   increasePoolAmount(
     _amount: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   initialize(
     _poolId: PromiseOrValue<BigNumberish>,
     _data: PromiseOrValue<BytesLike>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   isPoolActive(
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   isValidAllocator(
     _allocator: PromiseOrValue<string>,
-    overrides?: CallOverrides,
+    overrides?: CallOverrides
   ): Promise<boolean>;
 
   registerRecipient(
     _data: PromiseOrValue<BytesLike>,
     _sender: PromiseOrValue<string>,
-    overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+    overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   rejectMilestone(
     _milestoneId: PromiseOrValue<BigNumberish>,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   setMilestones(
     _milestones: IStrategy.MilestoneStruct[],
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   submitUpcomingMilestone(
     _metadata: MetadataStruct,
-    overrides?: Overrides & { from?: PromiseOrValue<string> },
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
     allocate(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     distribute(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     getAllo(overrides?: CallOverrides): Promise<string>;
@@ -500,7 +500,7 @@ export interface IStrategy extends BaseContract {
     getPayouts(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<IStrategy.PayoutSummaryStructOutput[]>;
 
     getPoolAmount(overrides?: CallOverrides): Promise<BigNumber>;
@@ -509,53 +509,53 @@ export interface IStrategy extends BaseContract {
 
     getRecipientStatus(
       _recipientId: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<number>;
 
     getStrategyId(overrides?: CallOverrides): Promise<string>;
 
     increaseMaxBid(
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     increasePoolAmount(
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     initialize(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     isPoolActive(overrides?: CallOverrides): Promise<boolean>;
 
     isValidAllocator(
       _allocator: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<boolean>;
 
     registerRecipient(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<string>;
 
     rejectMilestone(
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     setMilestones(
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
 
     submitUpcomingMilestone(
       _metadata: MetadataStruct,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<void>;
   };
 
@@ -564,31 +564,31 @@ export interface IStrategy extends BaseContract {
       recipientId?: PromiseOrValue<string> | null,
       amount?: null,
       token?: null,
-      sender?: null,
+      sender?: null
     ): AllocatedEventFilter;
     Allocated(
       recipientId?: PromiseOrValue<string> | null,
       amount?: null,
       token?: null,
-      sender?: null,
+      sender?: null
     ): AllocatedEventFilter;
 
     "Distributed(address,address,uint256,address)"(
       recipientId?: PromiseOrValue<string> | null,
       recipientAddress?: null,
       amount?: null,
-      sender?: null,
+      sender?: null
     ): DistributedEventFilter;
     Distributed(
       recipientId?: PromiseOrValue<string> | null,
       recipientAddress?: null,
       amount?: null,
-      sender?: null,
+      sender?: null
     ): DistributedEventFilter;
 
     "Initialized(uint256,bytes)"(
       poolId?: null,
-      data?: null,
+      data?: null
     ): InitializedEventFilter;
     Initialized(poolId?: null, data?: null): InitializedEventFilter;
 
@@ -598,12 +598,12 @@ export interface IStrategy extends BaseContract {
     "Registered(address,bytes,address)"(
       recipientId?: PromiseOrValue<string> | null,
       data?: null,
-      sender?: null,
+      sender?: null
     ): RegisteredEventFilter;
     Registered(
       recipientId?: PromiseOrValue<string> | null,
       data?: null,
-      sender?: null,
+      sender?: null
     ): RegisteredEventFilter;
   };
 
@@ -611,14 +611,14 @@ export interface IStrategy extends BaseContract {
     allocate(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     distribute(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     getAllo(overrides?: CallOverrides): Promise<BigNumber>;
@@ -626,7 +626,7 @@ export interface IStrategy extends BaseContract {
     getPayouts(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getPoolAmount(overrides?: CallOverrides): Promise<BigNumber>;
@@ -635,55 +635,55 @@ export interface IStrategy extends BaseContract {
 
     getRecipientStatus(
       _recipientId: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     getStrategyId(overrides?: CallOverrides): Promise<BigNumber>;
 
     increaseMaxBid(
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     increasePoolAmount(
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     initialize(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     isPoolActive(
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     isValidAllocator(
       _allocator: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     registerRecipient(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     rejectMilestone(
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     setMilestones(
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
     submitUpcomingMilestone(
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
   };
 
@@ -691,14 +691,14 @@ export interface IStrategy extends BaseContract {
     allocate(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     distribute(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     getAllo(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -706,7 +706,7 @@ export interface IStrategy extends BaseContract {
     getPayouts(
       _recipientIds: PromiseOrValue<string>[],
       _data: PromiseOrValue<BytesLike>[],
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getPoolAmount(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -715,55 +715,55 @@ export interface IStrategy extends BaseContract {
 
     getRecipientStatus(
       _recipientId: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getStrategyId(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     increaseMaxBid(
       _maxBid: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     increasePoolAmount(
       _amount: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     initialize(
       _poolId: PromiseOrValue<BigNumberish>,
       _data: PromiseOrValue<BytesLike>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     isPoolActive(
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     isValidAllocator(
       _allocator: PromiseOrValue<string>,
-      overrides?: CallOverrides,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     registerRecipient(
       _data: PromiseOrValue<BytesLike>,
       _sender: PromiseOrValue<string>,
-      overrides?: PayableOverrides & { from?: PromiseOrValue<string> },
+      overrides?: PayableOverrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     rejectMilestone(
       _milestoneId: PromiseOrValue<BigNumberish>,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     setMilestones(
       _milestones: IStrategy.MilestoneStruct[],
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     submitUpcomingMilestone(
       _metadata: MetadataStruct,
-      overrides?: Overrides & { from?: PromiseOrValue<string> },
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -14,137 +14,128 @@ declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
       name: "IERC20",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC20__factory>;
     getContractFactory(
       name: "IAllo",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IAllo__factory>;
     getContractFactory(
       name: "IAnchor",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IAnchor__factory>;
     getContractFactory(
       name: "IRegistry",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IRegistry__factory>;
     getContractFactory(
       name: "IStrategy",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IStrategy__factory>;
     getContractFactory(
-      name: "Verifier",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
-    ): Promise<Contracts.Verifier__factory>;
-    getContractFactory(
       name: "ZK_RFP",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ZK_RFP__factory>;
     getContractFactory(
       name: "Verifier",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Verifier__factory>;
     getContractFactory(
       name: "ZKTreeVote",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ZKTreeVote__factory>;
     getContractFactory(
       name: "IHasher",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IHasher__factory>;
     getContractFactory(
       name: "MerkleTreeWithHistory",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MerkleTreeWithHistory__factory>;
     getContractFactory(
       name: "IVerifier",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IVerifier__factory>;
     getContractFactory(
       name: "ZKTree",
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ZKTree__factory>;
 
     getContractAt(
       name: "IERC20",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IERC20>;
     getContractAt(
       name: "IAllo",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IAllo>;
     getContractAt(
       name: "IAnchor",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IAnchor>;
     getContractAt(
       name: "IRegistry",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IRegistry>;
     getContractAt(
       name: "IStrategy",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IStrategy>;
-    getContractAt(
-      name: "Verifier",
-      address: string,
-      signer?: ethers.Signer,
-    ): Promise<Contracts.Verifier>;
     getContractAt(
       name: "ZK_RFP",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.ZK_RFP>;
     getContractAt(
       name: "Verifier",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.Verifier>;
     getContractAt(
       name: "ZKTreeVote",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.ZKTreeVote>;
     getContractAt(
       name: "IHasher",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IHasher>;
     getContractAt(
       name: "MerkleTreeWithHistory",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.MerkleTreeWithHistory>;
     getContractAt(
       name: "IVerifier",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.IVerifier>;
     getContractAt(
       name: "ZKTree",
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<Contracts.ZKTree>;
 
     // default types
     getContractFactory(
       name: string,
-      signerOrOptions?: ethers.Signer | FactoryOptions,
+      signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<ethers.ContractFactory>;
     getContractFactory(
       abi: any[],
       bytecode: ethers.utils.BytesLike,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<ethers.ContractFactory>;
     getContractAt(
       nameOrAbi: string | any[],
       address: string,
-      signer?: ethers.Signer,
+      signer?: ethers.Signer
     ): Promise<ethers.Contract>;
   }
 }
