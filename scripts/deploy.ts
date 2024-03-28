@@ -101,7 +101,8 @@ async function main() {
     pool_zk_vote,
     wallet,
     20,
-    commitment1
+    commitment1,
+    "keys/Verifier.zkey"
   );
 
   console.log("Nullifier Hash 1: ", commitment1.nullifierHash);
